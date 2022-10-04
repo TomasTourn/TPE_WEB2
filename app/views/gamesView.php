@@ -13,7 +13,12 @@
 
 
         }
+         function showGameF($game){
+            $smarty= new Smarty();
 
+            $smarty->assign('game',$game);
+            $smarty->display('templates/showGame.tpl');
+         }
 
 
     }

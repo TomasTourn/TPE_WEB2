@@ -17,7 +17,7 @@
       function getAll(){
        
     
-        $query = $this->db->prepare('SELECT * FROM juegos');
+        $query = $this->db->prepare('SELECT * FROM juegos ');
         $query-> execute();
     
         $juegos  = $query->fetchAll(PDO::FETCH_OBJ);
@@ -25,5 +25,18 @@
     
         return $juegos;
     }
+
+
+        function getOne($id){
+            $query = $this->db->prepare('SELECT * FROM juegos  JOIN genero ON genero.id_genero = juegos.id_genero_fk  WHERE id_juego= ?');
+            $query-> execute([$id]);
+
+            $juego  = $query->fetch(PDO::FETCH_OBJ);
+            return $juego;
+
+
+        }
+
+
 
 }

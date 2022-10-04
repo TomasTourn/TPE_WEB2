@@ -17,4 +17,7 @@ switch($params[0]){
     case "table":
         $controller->showTable();
         break;
+    case "showGame":
+        $controller->showGame($params[1]);
+        break;
     }

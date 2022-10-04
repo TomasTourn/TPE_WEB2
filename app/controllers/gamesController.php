@@ -20,6 +20,17 @@ class gamesController{
        
     }
 
+    function showGame($id){
+
+        $game = $this->model->getOne($id);
+        $this->view->showGame($game);
+
+        
+
+
+
+
+    }
 
 
 
