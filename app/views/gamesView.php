@@ -37,8 +37,8 @@
           
          }
 
-         function gameForm($action){
-
+         function gameForm($action,$genres){
+            $this->smarty->assign('genres',$genres);
             $this->smarty->assign('titulo','agregar juego');
             $this->smarty->assign('encabezado','add');
             $this->smarty->assign('footer','footer');

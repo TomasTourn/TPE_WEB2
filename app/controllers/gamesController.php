@@ -2,6 +2,7 @@
 
 require_once "app/models/gamesModel.php";
 require_once "app/views/gamesView.php";
+require_once "app/models/genreModel.php";
 
 class gamesController{
 
@@ -11,6 +12,7 @@ class gamesController{
     function __construct(){
         
         $this->model = new gamesModel();
+        $this->genreModel = new genreModel();
         $this->view = new gamesView();
     }
 
@@ -27,8 +29,8 @@ class gamesController{
     }
 
    function addGame(){
-        $this->model->getAll();//llamar al otro controlador para obtener todos los generos? o crear un admincontroller?
-        $this->view->GameForm("added");
+        $genres= $this->genreModel->getAll();
+        $this->view->GameForm("added",$genres);
 
 
    }
