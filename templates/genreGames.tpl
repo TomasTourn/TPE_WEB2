@@ -6,9 +6,8 @@
             <th>nombre</th>
             <th>genero</th>
             <th>imagen</th>
-            <th>ver más</th>
-            <th>edit</th>
-            <th>delete</th>
+            <th>precio</th>
+            <th>descripcion</th>
         </tr>
     </thead>
         <tbody>
@@ -18,9 +17,8 @@
                     <td>{$game->nombre}</td>
                     <td>{$game->genero}</td>
                     <td><img class="img" src="{$game->imagen}" alt=""></td>
-                    <td><a href="showGame/{$game->id_juego}">ver más</a></td>
-                    <td> <a href='editGame/{$game->id_juego}'>edit</a></td>
-                    <td> <a href="deleteGame/{$game->id_juego}">delete</a></td>
+                    <td>{$game->precio}</td>
+                    <td>{$game->descripcion}</td>
                 </tr>
 
             {/foreach}

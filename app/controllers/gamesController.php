@@ -24,15 +24,14 @@ class gamesController{
 
         $game = $this->model->getOne($id);
         $this->view->showGame($game);
-
-        
-
-
-
-
     }
 
+   function addGame(){
+        $this->model->getAll();//llamar al otro controlador para obtener todos los generos? o crear un admincontroller?
+        $this->view->GameForm("added");
 
+
+   }
 
 
 }

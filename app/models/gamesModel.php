@@ -14,10 +14,11 @@
           $db = new PDO('mysql:host=localhost;'.'dbname=videojuegos;charset=utf8','root',''); 
           return $db;
       }
+      
       function getAll(){
        
     
-        $query = $this->db->prepare('SELECT * FROM juegos ');
+        $query = $this->db->prepare('SELECT * FROM juegos  JOIN genero ON genero.id_genero = juegos.id_genero_fk ');
         $query-> execute();
     
         $juegos  = $query->fetchAll(PDO::FETCH_OBJ);
