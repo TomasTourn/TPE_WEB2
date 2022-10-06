@@ -33,6 +33,42 @@ switch($params[0]){
         $genresController->showByGenre($params[1]);
         break;
     case "addGame":
-        $gamesController->addGame();
+        $gamesController->gameForm();
         break;
+    case "addedGame":
+        $gamesController->addGame();
+        header("location: ". BASE_URL."table");
+        break;
+    case "deleteGame":
+        $gamesController->deleteGame($params[1]);
+        header("location: ". BASE_URL."table");
+        break;
+
+    case "updateGame":
+        $gamesController->updateGameForm($params[1]);
+        break;
+    case "updatedGame":
+        $gamesController->updateGame($params[1]);
+        header("location: ". BASE_URL."table");
+        break;
+
+    case "addGenre":
+        $genresController->addGenreForm();
+        break;
+    case "addedGenre":
+        $genresController->addGenre();
+        header("location: ". BASE_URL."showGenre");
+        break;
+    case "deleteGenre":
+        $genresController->deleteGenre($params[1]);
+        header("location: ". BASE_URL."showGenre");
+        break;
+    case "updateGenre":
+        $genresController->updateGenreForm($params[1]);
+        break;
+    case "updatedGenre":
+        $genresController->updateGenre($params[1]);
+        header("location: ". BASE_URL."showGenre");
+        break;
+    
     }

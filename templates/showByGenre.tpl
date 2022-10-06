@@ -11,6 +11,7 @@
         </tr>
     </thead>
         <tbody>
+        
             {foreach from=$genres item=$genre}
 
                 <tr>

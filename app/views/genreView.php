@@ -23,10 +23,11 @@
 
     }
 
-    function showBygenre($games){
+    function showBygenre($games,$genre){
 
         $this->smarty->assign('titulo','tabla de generos');
         $this->smarty->assign('footer','footer');
+        $this->smarty->assign('genero',$genre);
         $this->smarty->assign('games',$games);
 
         if(sizeof($games)>0){
@@ -35,9 +36,32 @@
         else{
             var_dump("no hay juegos en ese genero");
         }
-       
+
+    }
+
+    function addGenreForm($action){
+
+        $this->smarty->assign('action',$action);
+        $this->smarty->assign('titulo','agregar genero');
+        $this->smarty->assign('encabezado','addGenre');
+        $this->smarty->assign('footer','footer');
+        $this->smarty->display('templates/genreForm.tpl');
 
 
+
+    }
+
+
+
+    function updateGenreForm($action,$genre){
+
+
+        $this->smarty->assign('action',$action);
+        $this->smarty->assign('genre',$genre);
+        $this->smarty->assign('titulo','editar genero');
+        $this->smarty->assign('encabezado','editar Genero');
+        $this->smarty->assign('footer','footer');
+        $this->smarty->display('templates/genreForm.tpl');
 
     }
 }

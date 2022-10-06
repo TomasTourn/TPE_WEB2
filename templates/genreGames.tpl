@@ -1,10 +1,10 @@
-{include file= 'templates/header.tpl'}
+{{include file= 'templates/header.tpl'}}
 <table>
-    
+    <h1>{$genero->genero}</h1>
     <thead>
         <tr>
             <th>nombre</th>
-            <th>genero</th>
+            <!-- <th>genero</th>-->
             <th>imagen</th>
             <th>precio</th>
             <th>descripcion</th>
@@ -15,7 +15,7 @@
 
                 <tr>
                     <td>{$game->nombre}</td>
-                    <td>{$game->genero}</td>
+                   <!-- <td>{$game->genero}</td>-->
                     <td><img class="img" src="{$game->imagen}" alt=""></td>
                     <td>{$game->precio}</td>
                     <td>{$game->descripcion}</td>
@@ -25,4 +25,4 @@
         </tbody>
 </table>
 
-{include file= 'templates/footer.tpl'}
+{{include file= 'templates/footer.tpl'}}

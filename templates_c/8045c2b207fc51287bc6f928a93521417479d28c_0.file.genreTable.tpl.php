@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-05 07:24:00
+/* Smarty version 4.2.1, created on 2022-10-06 09:01:23
   from 'C:\xampp\htdocs\proyectos\TPE_WEB2\templates\genreTable.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633d14f01dc9d9_55280681',
+  'unifunc' => 'content_633e7d43878369_68563254',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8045c2b207fc51287bc6f928a93521417479d28c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_WEB2\\templates\\genreTable.tpl',
-      1 => 1664947438,
+      1 => 1665039681,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_633d14f01dc9d9_55280681 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633e7d43878369_68563254 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <table>
@@ -37,6 +37,7 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
         </tr>
     </thead>
         <tbody>
+        
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['genres']->value, 'genre');
 $_smarty_tpl->tpl_vars['genre']->do_else = true;
@@ -51,9 +52,9 @@ $_smarty_tpl->tpl_vars['genre']->do_else = false;
 </td>
                     <td><a href="showByGenre/<?php echo $_smarty_tpl->tpl_vars['genre']->value->id_genero;?>
 ">ver mas</a></td>
-                    <td> <a href='edit/<?php echo $_smarty_tpl->tpl_vars['genre']->value->id_genero;?>
+                    <td> <a href='updateGenre/<?php echo $_smarty_tpl->tpl_vars['genre']->value->id_genero;?>
 '>edit</a></td>
-                    <td> <a href="delete/<?php echo $_smarty_tpl->tpl_vars['genre']->value->id_genero;?>
+                    <td> <a href="deleteGenre/<?php echo $_smarty_tpl->tpl_vars['genre']->value->id_genero;?>
 ">delete</a></td>
                 </tr>
 

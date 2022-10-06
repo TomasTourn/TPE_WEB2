@@ -38,6 +38,30 @@
 
         }
 
+        function addGame($name,$price,$description,$genre){
+
+            $query = $this->db->prepare('INSERT INTO juegos  (nombre,precio,descripcion,id_genero_fk) VALUES (?,?,?,?)');
+            $query-> execute([$name,$price,$description,$genre]);
+
+        }
+
+        function deleteGame($id){
+
+            $query = $this->db->prepare('DELETE FROM juegos WHERE id_juego=?');
+            $query-> execute([$id]);
+
+        }
+
+        function updateGame($id,$name,$price,$description,$genre){
+
+            $query = $this->db->prepare('UPDATE juegos SET nombre =?,precio=?,descripcion = ?,id_genero_fk=? WHERE id_juego =?');
+            $query-> execute([$name,$price,$description,$genre,$id]);
+
+
+
+
+        }
+
 
 
 }

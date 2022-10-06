@@ -19,7 +19,7 @@
                     <td>{$game->genero}</td>
                     <td><img class="img" src="{$game->imagen}" alt=""></td>
                     <td><a href="showGame/{$game->id_juego}">ver más</a></td>
-                    <td> <a href='editGame/{$game->id_juego}'>edit</a></td>
+                    <td> <a href='updateGame/{$game->id_juego}'>edit</a></td>
                     <td> <a href="deleteGame/{$game->id_juego}">delete</a></td>
                 </tr>
 

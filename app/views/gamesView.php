@@ -44,9 +44,20 @@
             $this->smarty->assign('footer','footer');
             $this->smarty->assign('action',$action);
             $this->smarty->display('templates/gameForm.tpl');
-
-
          }
+    
 
+         function updateGameForm($action,$genres,$game,$genre){
+
+            $this->smarty->assign('genres',$genres);
+            $this->smarty->assign('genre',$genre);
+            $this->smarty->assign('game',$game);
+            $this->smarty->assign('titulo','editar juego');
+            $this->smarty->assign('encabezado','edit');
+            $this->smarty->assign('footer','footer');
+            $this->smarty->assign('action',$action);
+            $this->smarty->display('templates/gameForm.tpl');
+
+        }
 
     }

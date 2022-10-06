@@ -24,6 +24,13 @@ class genreModel{
     
         return $genres;
     }
+    function getOne($id){
+        $query = $this->db->prepare('SELECT * FROM genero WHERE id_genero = ?');
+        $query-> execute([$id]);
+    
+        $genre = $query->fetch(PDO::FETCH_OBJ);
+        return $genre;
+    }
 
     function getByGenre($id){
 
@@ -37,7 +44,27 @@ class genreModel{
 
     }
 
+    function addGenre($genre,$description){
 
+        $query = $this->db->prepare('INSERT INTO genero  (genero,descripcion_genero) VALUES (?,?)');
+        $query-> execute([$genre,$description]);
+        
+    }
+
+    function deleteGenre($id){
+        
+        $query = $this->db->prepare('DELETE FROM genero WHERE id_genero=?');
+        $query-> execute([$id]);
+
+
+    }
+
+
+    function updateGenre($id,$genre,$description){
+        $query = $this->db->prepare('UPDATE genero SET genero =?, descripcion_genero = ? WHERE id_genero =?');
+        $query-> execute([$genre,$description,$id]);
+
+    }
 
 
 
