@@ -1,7 +1,7 @@
 <?php
 require_once "app/controllers/gamesController.php";
 require_once "app/controllers/genreController.php";
-$action="home";
+$action="table";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -17,7 +17,7 @@ $genresController= new genreController();
 
 
 switch($params[0]){
-    case "table":
+    case "home":
         $gamesController->showTable();
         break;
     case "showGame":
@@ -37,11 +37,11 @@ switch($params[0]){
         break;
     case "addedGame":
         $gamesController->addGame();
-        header("location: ". BASE_URL."table");
+        header("location: ". BASE_URL."home");
         break;
     case "deleteGame":
         $gamesController->deleteGame($params[1]);
-        header("location: ". BASE_URL."table");
+        header("location: ". BASE_URL."home");
         break;
 
     case "updateGame":
@@ -49,7 +49,7 @@ switch($params[0]){
         break;
     case "updatedGame":
         $gamesController->updateGame($params[1]);
-        header("location: ". BASE_URL."table");
+        header("location: ". BASE_URL."home");
         break;
 
     case "addGenre":

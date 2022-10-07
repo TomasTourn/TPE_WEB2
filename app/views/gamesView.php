@@ -14,7 +14,7 @@
         function showTable($games){
 
             
-            $this->smarty->assign('titulo','tabla de juegos');
+            $this->smarty->assign('titulo','Videojuegos a la venta');
             $this->smarty->assign('encabezado','tabla');
             $this->smarty->assign('footer','footer');
             $this->smarty->assign('games',$games);

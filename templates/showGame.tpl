@@ -27,5 +27,5 @@
 
         </tbody>
 </table>
-<a href="table">volver a table</a>
+<a href="home">volver a table</a>
 {include file= 'templates/footer.tpl'}

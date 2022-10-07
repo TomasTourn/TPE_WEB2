@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-05 21:11:10
+/* Smarty version 4.2.1, created on 2022-10-06 21:48:08
   from 'C:\xampp\htdocs\tpe\TPE_WEB2\templates\gamesTable.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633dd6cec24d76_09941593',
+  'unifunc' => 'content_633f30f826c006_07049000',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '67ed8b618ab3785461b32668029cc268f71dc18c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe\\TPE_WEB2\\templates\\gamesTable.tpl',
-      1 => 1664997011,
+      1 => 1665085686,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_633dd6cec24d76_09941593 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633f30f826c006_07049000 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <table>
@@ -54,7 +54,7 @@ $_smarty_tpl->tpl_vars['game']->do_else = false;
 " alt=""></td>
                     <td><a href="showGame/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
 ">ver más</a></td>
-                    <td> <a href='editGame/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
+                    <td> <a href='updateGame/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
 '>edit</a></td>
                     <td> <a href="deleteGame/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
 ">delete</a></td>
