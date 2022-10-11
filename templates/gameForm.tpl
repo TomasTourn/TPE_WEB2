@@ -5,14 +5,14 @@
     
   <div class="form-floating"> 
       
-          <input type="text" class="form-control" id="name" name="name" placeholder="name" value="">
-          <label for="name">Nombre</label>
+    <input type="text" class="form-control" id="name"  name="name" placeholder="name" value="">
+    <label for="name">Nombre</label>
         
 </div>
 
 <div class="form-floating"> 
   <input type="number" class="form-control" id="precio" name="price" placeholder="precio" value="">
-          <label for="precio">Precio</label>
+          <label for="price">Precio</label>
 </div>
 
 <div class="form-floating"> 

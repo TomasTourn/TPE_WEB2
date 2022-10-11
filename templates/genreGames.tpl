@@ -1,26 +1,38 @@
 {{include file= 'templates/header.tpl'}}
-<table>
+
+
+
+{if empty($games)}
     <h1>{$genero->genero}</h1>
-    <thead>
-        <tr>
-            <th>nombre</th>
-            <th>imagen</th>
-            <th>precio</th>
-            <th>descripcion</th>
-        </tr>
-    </thead>
-        <tbody>
-            {foreach from=$games item=$game}
+    <p> el genero aun no contiene ningun juego</p>
+{else}
+    <h1>{$genero->genero}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>nombre</th>
+                <th>imagen</th>
+                <th>precio</th>
+                <th>descripcion</th>
+            </tr>
+        </thead>
+            <tbody>
+                
+                
+            
+                {foreach from=$games item=$game}
 
-                <tr>
-                    <td>{$game->nombre}</td>
-                    <td><img class="img" src="{$game->imagen}" alt=""></td>
-                    <td>{$game->precio}</td>
-                    <td>{$game->descripcion}</td>
-                </tr>
+                    <tr>
+                        <td>{$game->nombre}</td>
+                        <td><img class="img" src="{$game->imagen}" alt=""></td>
+                        <td>{$game->precio}</td>
+                        <td>{$game->descripcion}</td>
+                    </tr>
 
-            {/foreach}
-        </tbody>
-</table>
+                {/foreach}
+                
+            </tbody>
+    </table>
+{/if}
 
 {{include file= 'templates/footer.tpl'}}

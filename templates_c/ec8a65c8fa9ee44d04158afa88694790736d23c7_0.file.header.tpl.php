@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-11 01:12:55
+/* Smarty version 4.2.1, created on 2022-10-11 03:12:05
   from 'C:\xampp\htdocs\proyectos\TPE_WEB2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6344a6f766b9a6_12506399',
+  'unifunc' => 'content_6344c2e51da7f8_41514932',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec8a65c8fa9ee44d04158afa88694790736d23c7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_WEB2\\templates\\header.tpl',
-      1 => 1665443574,
+      1 => 1665450724,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6344a6f766b9a6_12506399 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6344c2e51da7f8_41514932 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
     <html lang="en">
     <head>
@@ -29,7 +29,7 @@ function content_6344a6f766b9a6_12506399 (Smarty_Internal_Template $_smarty_tpl)
 ">
    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/gamespage.css">
+    <link rel="stylesheet" href="css/games.css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,6 +57,12 @@ function content_6344a6f766b9a6_12506399 (Smarty_Internal_Template $_smarty_tpl)
               <?php if ((isset($_SESSION['user']))) {?>
               <li class="nav-item">
                 <a class="nav-link" href="logOut">Log out</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="addGame">Agregar Juego</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="addGenre">Agregar Genero</a>
               </li>
               <?php } else { ?>
               <li class="nav-item">

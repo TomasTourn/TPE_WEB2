@@ -69,4 +69,10 @@ footer ul li{
 footer h3{
    font-size: 1.2rem;
 }
+div label{
+    color: black;
+}
+div.mb-3 label{
+    color: white;
+}
 
