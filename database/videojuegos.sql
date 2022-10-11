@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2022 at 07:02 PM
+-- Generation Time: Oct 11, 2022 at 06:50 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -38,7 +38,7 @@ CREATE TABLE `genero` (
 --
 
 INSERT INTO `genero` (`id_genero`, `genero`, `descripcion_genero`) VALUES
-(1, 'Acción', 'Generalmente implican avanzar a través de niveles, eliminando hordas de enemigos y resolviendo problemas. Muchos videojuegos incluyen uno o más \"jefes\", a veces precedidos por \"minijefes\". Un minijefe es generalmente el clímax hacia un nivel o serie de niveles, con un jefe al final del juego o periódicamente por el juego, llevando a un \"jefe final\", el cual derrotar es el objetivo principal.'),
+(1, 'Acción', 'Generalmente implican avanzar a través de niveles, eliminando hordas de enemigos y resolviendo problemas. Muchos videojuegos incluyen uno o más.'),
 (2, 'Aventura', 'Caracterizados por la investigación, exploración, la solución de rompecabezas, la interacción con personajes del videojuego, y un enfoque en el relato en vez de desafíos basados en reflejos . Es importante observar que este término no tiene relación con las películas y novelas de aventura y no es indicativo del tema o del sujeto que trata. '),
 (3, 'Carreras', 'Un videojuego de carreras es un videojuego en el que se imitan competencias entre vehículos. Usualmente el objetivo es recorrer cierta distancia o ir de un sitio hacia otro en el menor tiempo posible, como en el automovilismo y el motociclismo'),
 (4, 'Disparos', 'permiten controlar un personaje que, por norma general, dispone de un arma y por lo general son multiplayer,Si  hace uso de internet, se puede catalogar en una serie de divisiones: Los juegos en equipo y los juegos individuales'),
@@ -48,10 +48,10 @@ INSERT INTO `genero` (`id_genero`, `genero`, `descripcion_genero`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `juegos`
+-- Table structure for table `juego`
 --
 
-CREATE TABLE `juegos` (
+CREATE TABLE `juego` (
   `id_juego` int(11) NOT NULL,
   `id_genero_fk` int(11) NOT NULL,
   `nombre` varchar(45) NOT NULL,
@@ -61,14 +61,32 @@ CREATE TABLE `juegos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `juegos`
+-- Dumping data for table `juego`
 --
 
-INSERT INTO `juegos` (`id_juego`, `id_genero_fk`, `nombre`, `precio`, `descripcion`, `imagen`) VALUES
-(1, 4, 'valorant', 0, 'disparos y habilidades', 'images/valorant.jpg'),
-(2, 1, 'Grand Theft Auto V', 500, 'mundo abierto con historia, disparos, autos y lo que quieras', 'images/gtav'),
-(3, 3, 'F1 2022', 70000, 'Ponte al volante en la nueva temporada: coches rediseñados y nuevas reglas que definen las carreras, con los pilotos de 2022.', ''),
-(4, 6, 'cult of the lamb', 1200, 'Crea tu propia secta en una tierra de falsos profetas, aventurándote en regiones diversas y misteriosas para construir una leal comunidad de adeptos de los bosques, y difunde tu Palabra para convertir tu secta en la única y verdadera.', 'images/cult');
+INSERT INTO `juego` (`id_juego`, `id_genero_fk`, `nombre`, `precio`, `descripcion`, `imagen`) VALUES
+(2, 1, 'Grand Theft Auto V', 599, 'mundo abierto con historia, disparos, autos y lo que quieras.', 'images/gtaV.jpg'),
+(3, 3, 'F1 2022', 700, 'Ponte al volante en la nueva temporada: coches rediseñados y nuevas reglas que definen las carreras, con los pilotos de 2022.', 'images/f1.jpg'),
+(4, 6, 'cult of the lamb', 1200, 'Crea tu propia secta en una tierra de falsos profetas, aventurándote en regiones diversas y misteriosas para construir una leal comunidad de adeptos de los bosques, y difunde tu Palabra para convertir tu secta en la única y verdadera.', 'images/cult.jpg'),
+(5, 3, 'forza horizon 5', 10000, 'Forza Horizon 5 es un videojuego de carreras multijugador en línea desarrollado por Playground Games y publicado por Xbox Game Studios. Es el quinto título de Forza Horizon y la duodécima entrega principal de la serie Forza. El juego está ambientado en una representación ficticia de México.', 'images/forza5.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `nombreUsuario` varchar(45) NOT NULL,
+  `password` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`nombreUsuario`, `password`) VALUES
+('tomas', '$2y$10$kU5H5mJXfE5/c/9.77EzHuzhcFnTrV9OwrbJ3flL93G4QkCPE0h.u');
 
 --
 -- Indexes for dumped tables
@@ -81,11 +99,17 @@ ALTER TABLE `genero`
   ADD PRIMARY KEY (`id_genero`);
 
 --
--- Indexes for table `juegos`
+-- Indexes for table `juego`
 --
-ALTER TABLE `juegos`
+ALTER TABLE `juego`
   ADD PRIMARY KEY (`id_juego`),
   ADD KEY `fk_restriction` (`id_genero_fk`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`nombreUsuario`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -95,22 +119,22 @@ ALTER TABLE `juegos`
 -- AUTO_INCREMENT for table `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `juegos`
+-- AUTO_INCREMENT for table `juego`
 --
-ALTER TABLE `juegos`
-  MODIFY `id_juego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `juego`
+  MODIFY `id_juego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `juegos`
+-- Constraints for table `juego`
 --
-ALTER TABLE `juegos`
+ALTER TABLE `juego`
   ADD CONSTRAINT `fk_restriction` FOREIGN KEY (`id_genero_fk`) REFERENCES `genero` (`id_genero`);
 COMMIT;
 
