@@ -61,9 +61,11 @@
   <div class="form-floating">
       <select name="genre" class="form-select" id="floatingSelect" aria-label="Floating label select example">
         <option value="{$genre->id_genero}"  selected>{$genre->genero}</option>
-        {foreach from=$genres item=$genre}
+        {foreach from=$genres item=$g}
         
-        <option value='{$genre->id_genero}'>{$genre->genero}</option>
+        {if $g->genero!=$genre->genero}
+        <option value='{$genre->id_genero}'>{$g->genero}</option>
+        {/if}
         {/foreach}
       </select>
       <label for="floatingSelect">Genero</label>

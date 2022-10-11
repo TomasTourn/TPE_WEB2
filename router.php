@@ -63,7 +63,6 @@ switch($params[0]){
         break;
     case "deleteGenre":
         $genresController->deleteGenre($params[1]);
-        header("location: ". BASE_URL."showGenre");
         break;
     case "updateGenre":
         $genresController->updateGenreForm($params[1]);
