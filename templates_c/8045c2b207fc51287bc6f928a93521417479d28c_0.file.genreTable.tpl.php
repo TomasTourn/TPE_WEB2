@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-06 09:01:23
+/* Smarty version 4.2.1, created on 2022-10-11 01:06:27
   from 'C:\xampp\htdocs\proyectos\TPE_WEB2\templates\genreTable.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633e7d43878369_68563254',
+  'unifunc' => 'content_6344a573d854d0_43214018',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8045c2b207fc51287bc6f928a93521417479d28c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_WEB2\\templates\\genreTable.tpl',
-      1 => 1665039681,
+      1 => 1665443166,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_633e7d43878369_68563254 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6344a573d854d0_43214018 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <table>
@@ -31,9 +31,11 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
         <tr>
             <th>genero</th>
             <th>descripcion</th>
-            <th></th>
+            <th>juegos</th>
+            <?php if ((isset($_SESSION['user']))) {?>
             <th>edit</th>
             <th>delete</th>
+            <?php }?>
         </tr>
     </thead>
         <tbody>
@@ -51,11 +53,13 @@ $_smarty_tpl->tpl_vars['genre']->do_else = false;
                     <td><?php echo $_smarty_tpl->tpl_vars['genre']->value->descripcion_genero;?>
 </td>
                     <td><a href="showByGenre/<?php echo $_smarty_tpl->tpl_vars['genre']->value->id_genero;?>
-">ver mas</a></td>
+">ver juegos</a></td>
+                    <?php if ((isset($_SESSION['user']))) {?>
                     <td> <a href='updateGenre/<?php echo $_smarty_tpl->tpl_vars['genre']->value->id_genero;?>
 '>edit</a></td>
                     <td> <a href="deleteGenre/<?php echo $_smarty_tpl->tpl_vars['genre']->value->id_genero;?>
 ">delete</a></td>
+                    <?php }?>
                 </tr>
 
             <?php
@@ -63,7 +67,6 @@ $_smarty_tpl->tpl_vars['genre']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </tbody>
 </table>
-
 <?php $_smarty_tpl->_subTemplateRender('file:templates/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }

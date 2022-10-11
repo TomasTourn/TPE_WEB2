@@ -18,7 +18,7 @@
       function getAll(){
        
     
-        $query = $this->db->prepare('SELECT * FROM juegos  JOIN genero ON genero.id_genero = juegos.id_genero_fk ');
+        $query = $this->db->prepare('SELECT * FROM juego  JOIN genero ON genero.id_genero = juego.id_genero_fk ');
         $query-> execute();
     
         $juegos  = $query->fetchAll(PDO::FETCH_OBJ);
@@ -29,7 +29,7 @@
 
 
         function getOne($id){
-            $query = $this->db->prepare('SELECT * FROM juegos  JOIN genero ON genero.id_genero = juegos.id_genero_fk  WHERE id_juego= ?');
+            $query = $this->db->prepare('SELECT * FROM juego  JOIN genero ON genero.id_genero = juego.id_genero_fk  WHERE id_juego= ?');
             $query-> execute([$id]);
 
             $juego  = $query->fetch(PDO::FETCH_OBJ);
@@ -40,21 +40,21 @@
 
         function addGame($name,$price,$description,$genre){
 
-            $query = $this->db->prepare('INSERT INTO juegos  (nombre,precio,descripcion,id_genero_fk) VALUES (?,?,?,?)');
+            $query = $this->db->prepare('INSERT INTO juego  (nombre,precio,descripcion,id_genero_fk) VALUES (?,?,?,?)');
             $query-> execute([$name,$price,$description,$genre]);
 
         }
 
         function deleteGame($id){
 
-            $query = $this->db->prepare('DELETE FROM juegos WHERE id_juego=?');
+            $query = $this->db->prepare('DELETE FROM juego WHERE id_juego=?');
             $query-> execute([$id]);
 
         }
 
         function updateGame($id,$name,$price,$description,$genre){
 
-            $query = $this->db->prepare('UPDATE juegos SET nombre =?,precio=?,descripcion = ?,id_genero_fk=? WHERE id_juego =?');
+            $query = $this->db->prepare('UPDATE juego SET nombre =?,precio=?,descripcion = ?,id_genero_fk=? WHERE id_juego =?');
             $query-> execute([$name,$price,$description,$genre,$id]);
 
 

@@ -13,10 +13,9 @@
 
         function showTable($games){
 
-            
+            session_start();
             $this->smarty->assign('titulo','Videojuegos a la venta');
             $this->smarty->assign('encabezado','tabla');
-            $this->smarty->assign('footer','footer');
             $this->smarty->assign('games',$games);
 
          
@@ -26,10 +25,9 @@
 
         }
          function showGame($game){
-            
+            session_start();
             $this->smarty->assign('titulo','detalle de juego');
             $this->smarty->assign('encabezado','juego');
-            $this->smarty->assign('footer','footer');
             $this->smarty->assign('game',$game);
             
            
@@ -41,7 +39,6 @@
             $this->smarty->assign('genres',$genres);
             $this->smarty->assign('titulo','agregar juego');
             $this->smarty->assign('encabezado','add');
-            $this->smarty->assign('footer','footer');
             $this->smarty->assign('action',$action);
             $this->smarty->display('templates/gameForm.tpl');
          }
@@ -54,7 +51,6 @@
             $this->smarty->assign('game',$game);
             $this->smarty->assign('titulo','editar juego');
             $this->smarty->assign('encabezado','edit');
-            $this->smarty->assign('footer','footer');
             $this->smarty->assign('action',$action);
             $this->smarty->display('templates/gameForm.tpl');
 

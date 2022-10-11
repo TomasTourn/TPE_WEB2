@@ -36,7 +36,7 @@ class genreModel{
     function getByGenre($id){
 
 
-        $query = $this->db->prepare('SELECT * FROM juegos  WHERE id_genero_fk= ?');
+        $query = $this->db->prepare('SELECT * FROM juego  WHERE id_genero_fk= ?');
         $query-> execute([$id]);
     
         $games  = $query->fetchAll(PDO::FETCH_OBJ);
@@ -67,7 +67,7 @@ class genreModel{
 
     }
 
-
+    
 
 
 

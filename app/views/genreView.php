@@ -12,9 +12,9 @@
 
      function showTable($genres){
 
-            
+        session_start();
         $this->smarty->assign('titulo','tabla de generos');
-        $this->smarty->assign('footer','footer');
+        $this->smarty->assign('encabezado','generos');
         $this->smarty->assign('genres',$genres);
 
      
@@ -24,9 +24,8 @@
     }
 
     function showBygenre($games,$genre){
-
+        session_start();
         $this->smarty->assign('titulo','tabla de generos');
-        $this->smarty->assign('footer','footer');
         $this->smarty->assign('genero',$genre);
         $this->smarty->assign('games',$games);
 
@@ -44,7 +43,6 @@
         $this->smarty->assign('action',$action);
         $this->smarty->assign('titulo','agregar genero');
         $this->smarty->assign('encabezado','addGenre');
-        $this->smarty->assign('footer','footer');
         $this->smarty->display('templates/genreForm.tpl');
 
 

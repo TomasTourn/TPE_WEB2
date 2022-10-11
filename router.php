@@ -1,7 +1,8 @@
 <?php
 require_once "app/controllers/gamesController.php";
 require_once "app/controllers/genreController.php";
-$action="table";
+require_once "app/controllers/loginController.php";
+$action="home";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -14,6 +15,7 @@ $params = explode('/',$action);
 
 $gamesController = new gamesController();
 $genresController= new genreController();
+$loginController= new loginController();
 
 
 switch($params[0]){
@@ -70,5 +72,17 @@ switch($params[0]){
         $genresController->updateGenre($params[1]);
         header("location: ". BASE_URL."showGenre");
         break;
-    
+    case "logIn":
+        $loginController->showLogin();
+        break;
+    case "verifyUser":
+        $loginController->verifyUser();
+        break;
+    case "generarPass":
+        $loginController->generarPass();
+        break;
+    case "logOut":
+        $loginController->logOut();
+        header("location: ". BASE_URL."home");
+        break;
     }
