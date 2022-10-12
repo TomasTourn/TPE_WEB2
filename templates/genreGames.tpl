@@ -2,10 +2,6 @@
 
 
 
-{if empty($games)}
-    <h1>{$genero->genero}</h1>
-    <p> el genero aun no contiene ningun juego</p>
-{else}
     <h1>{$genero->genero}</h1>
     <table>
         <thead>
@@ -33,6 +29,6 @@
                 
             </tbody>
     </table>
-{/if}
+
 
 {{include file= 'templates/footer.tpl'}}

@@ -1,6 +1,6 @@
 {include file= 'templates/header.tpl'}
 
-{if $action=="addedGame"}
+{if $action=="finishAddGame"}
 <form   action="{$action}" method="post">
     
   <div class="form-floating"> 
@@ -36,7 +36,7 @@
 
 
 
-{elseif $action=="updatedGame"}
+{elseif $action=="finishUpdateGame"}
 
 
 
@@ -60,12 +60,12 @@
 
   <div class="form-floating">
       <select name="genre" class="form-select" id="floatingSelect" aria-label="Floating label select example">
-        <option value="{$genre->id_genero}"  selected>{$genre->genero}</option>
-        {foreach from=$genres item=$g}
+        <option value="{$game->id_genero_fk}"  selected>{$game->genero}</option>
+        {foreach from=$genres item=$genre}
         
-        {if $g->genero!=$genre->genero}
-        <option value='{$genre->id_genero}'>{$g->genero}</option>
-        {/if}
+          {if $genre->genero!=$game->genero}
+            <option value='{$genre->id_genero}'>{$genre->genero}</option>
+          {/if}
         {/foreach}
       </select>
       <label for="floatingSelect">Genero</label>

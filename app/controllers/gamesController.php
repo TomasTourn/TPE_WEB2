@@ -36,7 +36,7 @@ class gamesController{
    function gameForm(){
         $this->userHelper->checkLoggedIn();
         $genres= $this->genreModel->getAll();
-        $this->view->GameForm("addedGame",$genres);
+        $this->view->GameForm("finishAddGame",$genres);
 
    }
 
@@ -59,9 +59,8 @@ class gamesController{
    function updateGameForm($id){
         $this->userHelper->checkLoggedIn();
         $game= $this->model->getOne($id);
-        $genre=$this->genreModel->getOne($game->id_genero_fk);
         $genres= $this->genreModel->getAll();
-        $this->view->updateGameForm("updatedGame",$genres,$game,$genre);
+        $this->view->updateGameForm("finishUpdateGame",$genres,$game);
    }
    function updateGame($id){
         $this->userHelper->checkLoggedIn();

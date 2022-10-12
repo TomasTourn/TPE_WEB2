@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-11 03:30:27
+/* Smarty version 4.2.1, created on 2022-10-12 20:37:52
   from 'C:\xampp\htdocs\proyectos\TPE_WEB2\templates\genreGames.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6344c7338eae23_73549821',
+  'unifunc' => 'content_63470980ed4905_82860042',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f180e488d607b151d4db20fe97f6057aa84d0272' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_WEB2\\templates\\genreGames.tpl',
-      1 => 1665451821,
+      1 => 1665599868,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6344c7338eae23_73549821 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63470980ed4905_82860042 (Smarty_Internal_Template $_smarty_tpl) {
 ob_start();
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_prefixVariable1 = ob_get_clean();
@@ -31,11 +31,6 @@ echo $_prefixVariable1;?>
 
 
 
-<?php if (empty($_smarty_tpl->tpl_vars['games']->value)) {?>
-    <h1><?php echo $_smarty_tpl->tpl_vars['genero']->value->genero;?>
-</h1>
-    <p> el genero aun no contiene ningun juego</p>
-<?php } else { ?>
     <h1><?php echo $_smarty_tpl->tpl_vars['genero']->value->genero;?>
 </h1>
     <table>
@@ -75,7 +70,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 
             </tbody>
     </table>
-<?php }?>
+
 
 <?php ob_start();
 $_smarty_tpl->_subTemplateRender('file:templates/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

@@ -1,7 +1,7 @@
 {include file= 'templates/header.tpl'}
 
 
-{if $action=="addedGenre"}
+{if $action=="finishAddGenre"}
 <form   action="{$action}" method="post">
     
     <div class="form-floating"> 
@@ -22,7 +22,7 @@
 
 
   
-  {elseif $action=="updatedGenre"}
+  {elseif $action=="finishUpdateGenre"}
 
 
   <form   action="{$action}/{$genre->id_genero}" method="post">

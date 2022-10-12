@@ -44,10 +44,9 @@
          }
     
 
-         function updateGameForm($action,$genres,$game,$genre){
+         function updateGameForm($action,$genres,$game){
 
             $this->smarty->assign('genres',$genres);
-            $this->smarty->assign('genre',$genre);
             $this->smarty->assign('game',$game);
             $this->smarty->assign('titulo','Editar' );
             $this->smarty->assign('encabezado','Editar Juego');

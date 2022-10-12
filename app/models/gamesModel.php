@@ -57,9 +57,6 @@
             $query = $this->db->prepare('UPDATE juego SET nombre =?,precio=?,descripcion = ?,id_genero_fk=? WHERE id_juego =?');
             $query-> execute([$name,$price,$description,$genre,$id]);
 
-
-
-
         }
 
 

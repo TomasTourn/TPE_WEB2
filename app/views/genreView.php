@@ -10,7 +10,7 @@
          
      }
 
-     function showTable($genres){
+     function showTable($genres,$message = null){
 
         session_start();
         $this->smarty->assign('titulo','Tabla de Generos');
@@ -52,8 +52,15 @@
         $this->smarty->assign('genre',$genre);
         $this->smarty->assign('titulo','Editar genero');
         $this->smarty->assign('encabezado','Editar Genero');
-        $this->smarty->assign('footer','footer');
         $this->smarty->display('templates/genreForm.tpl');
 
     }
+
+    function showMessage($message){
+        $this->smarty->assign('titulo','Editar genero');
+        $this->smarty->assign('encabezado','Editar Genero');
+        $this->smarty->assign('message',$message);
+        $this->smarty->display('templates/showMessage.tpl');
+    }
+    
 }

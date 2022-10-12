@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-11 03:28:11
+/* Smarty version 4.2.1, created on 2022-10-12 20:31:32
   from 'C:\xampp\htdocs\proyectos\TPE_WEB2\templates\genreTable.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6344c6ab4f6e28_55975916',
+  'unifunc' => 'content_63470804a418d1_17836710',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8045c2b207fc51287bc6f928a93521417479d28c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_WEB2\\templates\\genreTable.tpl',
-      1 => 1665451689,
+      1 => 1665599222,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6344c6ab4f6e28_55975916 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63470804a418d1_17836710 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
