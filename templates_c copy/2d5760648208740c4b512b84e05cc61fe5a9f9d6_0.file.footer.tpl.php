@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 20:20:36
+/* Smarty version 4.2.1, created on 2022-10-11 01:26:01
   from 'C:\xampp\htdocs\proyectos\TPE_WEB2\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634856f453d681_50464136',
+  'unifunc' => 'content_6344aa09ec9289_39734919',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634856f453d681_50464136 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6344aa09ec9289_39734919 (Smarty_Internal_Template $_smarty_tpl) {
 ?>           
            </div><footer>&#169Todos los Derechos Reservados. Dante Tomas Tourn. </footer>
         
