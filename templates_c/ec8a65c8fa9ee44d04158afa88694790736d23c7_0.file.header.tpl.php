@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-12 19:37:28
+/* Smarty version 4.2.1, created on 2022-10-13 19:22:07
   from 'C:\xampp\htdocs\proyectos\TPE_WEB2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6346fb5814a280_91906716',
+  'unifunc' => 'content_6348493f9c3a52_73780435',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec8a65c8fa9ee44d04158afa88694790736d23c7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_WEB2\\templates\\header.tpl',
-      1 => 1665596207,
+      1 => 1665681719,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6346fb5814a280_91906716 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6348493f9c3a52_73780435 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
     <html lang="en">
     <head>
@@ -29,7 +29,7 @@ function content_6346fb5814a280_91906716 (Smarty_Internal_Template $_smarty_tpl)
 ">
    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="css/game.css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

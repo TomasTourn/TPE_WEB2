@@ -52,17 +52,12 @@ class genreController{
         $games=$this->model->getByGenre($id);
         if(empty($games)){
             $this->model->deleteGenre($id);
+            header("location: ". BASE_URL."showGenre");
         }
         else{
             $genre= $this->model->getOne($id);
             $this->view->showMessage("no se puede eliminar ". $genre->genero. " porque contiene juegos");
         }
-      /*  if(sizeof($this->model->getByGenre($id))<=0){
-           
-        }
-        else{
-            $smarty->view->
-        }*/
     }
     
     function updateGenreForm($id){
@@ -78,7 +73,6 @@ class genreController{
         $genre= $_POST['genre'];
         $description= $_POST['description'];
         
-
         $this->model->updateGenre($id,$genre,$description);
 
 

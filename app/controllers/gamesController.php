@@ -41,13 +41,21 @@ class gamesController{
    }
 
    function addGame(){
-        $this->userHelper->checkLoggedIn();
-        $name= $_POST['name'];
-        $price= $_POST['price'];
-        $description= $_POST['description'];
-        $genre= $_POST['genre'];
+     $this->userHelper->checkLoggedIn();
+     $name= $_POST['name'];
+     $price= $_POST['price'];
+     $description= $_POST['description'];
+     $genre= $_POST['genre'];
+     //chequeo si la imagen se subio
+     if($_FILES['image']['type'] == "image/jpg" || $_FILES['image']['type'] == "image/jpeg" || $_FILES['image']['type'] == "image/png"){
+          echo"la imagen existe";
+          $this->model->addGame($name,$price,$description,$genre,$_FILES['image']['tmp_name']);
 
-        $this->model->addGame($name,$price,$description,$genre);
+     }
+     else{
+          $this->model->addGame($name,$price,$description,$genre);
+     }
+
 
    }
 
@@ -69,7 +77,16 @@ class gamesController{
         $description= $_POST['description'];
         $genre= $_POST['genre'];
 
-        $this->model->updateGame($id,$name,$price,$description,$genre);
+        
+        if($_FILES['image']['type'] == "image/jpg" || $_FILES['image']['type'] == "image/jpeg" || $_FILES['image']['type'] == "image/png"){
+          echo"la imagen existe";
+          $this->model->updateGame($id,$name,$price,$description,$genre,$_FILES['image']['tmp_name']);
+
+     }else{
+          $this->model->updateGame($id,$name,$price,$description,$genre);
+     }
+
+        
 
    }
 

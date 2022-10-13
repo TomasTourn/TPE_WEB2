@@ -1,31 +1,31 @@
 <?php
 
 
-    class gamesModel{
+        class gamesModel{
 
     
-      private $db;
+            private $db;
 
-      function __construct(){ //start the connection with the db
-          $this->db = $this->connectDB();
-      }
-      
-      private function connectDB(){
-          $db = new PDO('mysql:host=localhost;'.'dbname=videojuegos;charset=utf8','root',''); 
-          return $db;
-      }
-      
-      function getAll(){
-       
-    
-        $query = $this->db->prepare('SELECT * FROM juego  JOIN genero ON genero.id_genero = juego.id_genero_fk ');
-        $query-> execute();
-    
-        $juegos  = $query->fetchAll(PDO::FETCH_OBJ);
-    
-    
-        return $juegos;
-    }
+            function __construct(){ //start the connection with the db
+                $this->db = $this->connectDB();
+            }
+            
+            private function connectDB(){
+                $db = new PDO('mysql:host=localhost;'.'dbname=videojuegos;charset=utf8','root',''); 
+                return $db;
+            }
+            
+            function getAll(){
+            
+            
+                $query = $this->db->prepare('SELECT * FROM juego  JOIN genero ON genero.id_genero = juego.id_genero_fk ');
+                $query-> execute();
+            
+                $juegos  = $query->fetchAll(PDO::FETCH_OBJ);
+            
+            
+                return $juegos;
+        }
 
 
         function getOne($id){
@@ -38,10 +38,27 @@
 
         }
 
-        function addGame($name,$price,$description,$genre){
+        function addGame($name,$price,$description,$genre,$image = null){
 
-            $query = $this->db->prepare('INSERT INTO juego  (nombre,precio,descripcion,id_genero_fk) VALUES (?,?,?,?)');
-            $query-> execute([$name,$price,$description,$genre]);
+            $pathImg = null;
+            if($image){
+                echo "segundo if imagen(setea)";
+                $pathImg = $this->uploadImage($image);
+
+                $query = $this->db->prepare('INSERT INTO juego  (nombre,precio,descripcion,id_genero_fk,imagen) VALUES (?,?,?,?,?)');
+                $query-> execute([$name,$price,$description,$genre,$pathImg]);
+            }else{
+                $query = $this->db->prepare('INSERT INTO juego  (nombre,precio,descripcion,id_genero_fk) VALUES (?,?,?,?)');
+                $query-> execute([$name,$price,$description,$genre]);
+            }
+           
+
+        }
+        private function uploadImage($image){
+
+            $target = 'images/' . uniqid() . '.jpg';
+            move_uploaded_file($image, $target);
+            return $target;
 
         }
 
@@ -52,11 +69,19 @@
 
         }
 
-        function updateGame($id,$name,$price,$description,$genre){
+        function updateGame($id,$name,$price,$description,$genre,$image = null){
 
-            $query = $this->db->prepare('UPDATE juego SET nombre =?,precio=?,descripcion = ?,id_genero_fk=? WHERE id_juego =?');
-            $query-> execute([$name,$price,$description,$genre,$id]);
+            $pathImg = null;
+            if($image){
+                $pathImg = $this->uploadImage($image);
 
+                $query = $this->db->prepare('UPDATE juego SET nombre =?,precio=?,descripcion = ?,id_genero_fk=?, imagen=? WHERE id_juego =?');
+                $query-> execute([$name,$price,$description,$genre,$pathImg,$id]);
+            
+            }else{
+                $query = $this->db->prepare('UPDATE juego SET nombre =?,precio=?,descripcion = ?,id_genero_fk=? WHERE id_juego =?');
+                $query-> execute([$name,$price,$description,$genre,$id]);
+            }
         }
 
 

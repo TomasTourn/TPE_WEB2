@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-12 19:47:18
+/* Smarty version 4.2.1, created on 2022-10-13 20:03:04
   from 'C:\xampp\htdocs\proyectos\TPE_WEB2\templates\gameForm.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6346fda69bd015_96363890',
+  'unifunc' => 'content_634852d87d1082_64649429',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3fe136bd4109ad0511ffc94d37b9ab7dd659c1fa' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPE_WEB2\\templates\\gameForm.tpl',
-      1 => 1665596668,
+      1 => 1665684182,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6346fda69bd015_96363890 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634852d87d1082_64649429 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <?php if ($_smarty_tpl->tpl_vars['action']->value == "finishAddGame") {?>
 <form   action="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
-" method="post">
+" method="post" enctype="multipart/form-data">
     
   <div class="form-floating"> 
       
@@ -47,6 +47,11 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
           <label for="description">Descripcion</label>
 </div>
 
+<div class="form-floating"> 
+  <input type="file" class="form-control" id="image" name="image" placeholder="image" value="">
+          <label  for="description">Imagen</label>
+</div>
+
   <div class="form-floating">
       <select name="genre" class="form-select" id="floatingSelect" aria-label="Floating label select example">
         <option selected>...</option>
@@ -56,8 +61,7 @@ $_smarty_tpl->tpl_vars['genre']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['genre']->value) {
 $_smarty_tpl->tpl_vars['genre']->do_else = false;
 ?>
-        
-        <option value='<?php echo $_smarty_tpl->tpl_vars['genre']->value->id_genero;?>
+            <option value='<?php echo $_smarty_tpl->tpl_vars['genre']->value->id_genero;?>
 '><?php echo $_smarty_tpl->tpl_vars['genre']->value->genero;?>
 </option>
         <?php
@@ -78,11 +82,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <form   action="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
-" method="post">
+" method="post" enctype="multipart/form-data">
   <div class="form-floating"> 
       
           <input type="text" class="form-control" id="name" value="<?php echo $_smarty_tpl->tpl_vars['game']->value->nombre;?>
-" name="name" placeholder="name" value="">
+" name="name" placeholder="name" >
           <label for="name">Nombre</label>
         
 </div>
@@ -97,6 +101,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
   <input type="text" class="form-control" id="description" name="description" placeholder="descripcion" value="<?php echo $_smarty_tpl->tpl_vars['game']->value->descripcion;?>
 ">
           <label for="description">Descripcion</label>
+</div>
+
+<div class="form-floating"> 
+  <input type="file" class="form-control" id="image" value="<?php echo $_smarty_tpl->tpl_vars['game']->value->imagen;?>
+" name="image" placeholder="image">
+          <label  for="description">Imagen</label>
 </div>
 
   <div class="form-floating">

@@ -1,7 +1,7 @@
 {include file= 'templates/header.tpl'}
 
 {if $action=="finishAddGame"}
-<form   action="{$action}" method="post">
+<form   action="{$action}" method="post" enctype="multipart/form-data">
     
   <div class="form-floating"> 
       
@@ -20,12 +20,16 @@
           <label for="description">Descripcion</label>
 </div>
 
+<div class="form-floating"> 
+  <input type="file" class="form-control" id="image" name="image" placeholder="image" value="">
+          <label  for="description">Imagen</label>
+</div>
+
   <div class="form-floating">
       <select name="genre" class="form-select" id="floatingSelect" aria-label="Floating label select example">
         <option selected>...</option>
         {foreach from=$genres item=$genre}
-        
-        <option value='{$genre->id_genero}'>{$genre->genero}</option>
+            <option value='{$genre->id_genero}'>{$genre->genero}</option>
         {/foreach}
       </select>
       <label for="floatingSelect">Genero</label>
@@ -40,10 +44,10 @@
 
 
 
-<form   action="{$action}/{$game->id_juego}" method="post">
+<form   action="{$action}/{$game->id_juego}" method="post" enctype="multipart/form-data">
   <div class="form-floating"> 
       
-          <input type="text" class="form-control" id="name" value="{$game->nombre}" name="name" placeholder="name" value="">
+          <input type="text" class="form-control" id="name" value="{$game->nombre}" name="name" placeholder="name" >
           <label for="name">Nombre</label>
         
 </div>
@@ -56,6 +60,11 @@
 <div class="form-floating"> 
   <input type="text" class="form-control" id="description" name="description" placeholder="descripcion" value="{$game->descripcion}">
           <label for="description">Descripcion</label>
+</div>
+
+<div class="form-floating"> 
+  <input type="file" class="form-control" id="image" value="{$game->imagen}" name="image" placeholder="image">
+          <label  for="description">Imagen</label>
 </div>
 
   <div class="form-floating">
