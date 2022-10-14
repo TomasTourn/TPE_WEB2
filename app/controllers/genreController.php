@@ -2,17 +2,19 @@
 require_once "app/models/genreModel.php";
 require_once "app/views/genreView.php";
 require_once "helpers/userHelper.php";
-
+require_once "app/models/gamesModel.php";
 class genreController{
 
     private $model;
     private $view;
     private $userHelper;
+    private $gamesModel;
     function __construct(){
         
         $this->model = new genreModel();
         $this->view = new genreView();
         $this->userHelper= new userHelper();
+        $this->gamesModel= new gamesModel();
     }
 
     function showTable(){
@@ -24,7 +26,7 @@ class genreController{
    
     function showByGenre($id){
           
-            $games= $this->model->getByGenre($id);
+            $games= $this->gamesModel->getByGenre($id);
             $genre= $this->model->getOne($id);
             if(empty($games)){
                 $this->view->showMessage("no se pueden mostrar juegos porque ". $genre->genero. " no contiene ninguno");
@@ -49,7 +51,7 @@ class genreController{
 
     function deleteGenre($id){
         $this->userHelper->checkLoggedIn();
-        $games=$this->model->getByGenre($id);
+        $games=$this->gamesModel->getByGenre($id);
         if(empty($games)){
             $this->model->deleteGenre($id);
             header("location: ". BASE_URL."showGenre");

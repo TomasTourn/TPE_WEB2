@@ -90,4 +90,4 @@
 
 
 
-{include file= 'templates/footer.tpl'}
+{include file= 'templates/footer.tpl'}ch

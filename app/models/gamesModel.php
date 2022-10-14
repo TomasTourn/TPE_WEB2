@@ -69,6 +69,17 @@
 
         }
 
+        function getByGenre($id){
+
+
+            $query = $this->db->prepare('SELECT * FROM juego  WHERE id_genero_fk= ?');
+            $query-> execute([$id]);
+        
+            $games  = $query->fetchAll(PDO::FETCH_OBJ);
+        
+            return $games;
+    
+        }
         function updateGame($id,$name,$price,$description,$genre,$image = null){
 
             $pathImg = null;
