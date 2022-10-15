@@ -42,7 +42,6 @@
 
             $pathImg = null;
             if($image){
-                echo "segundo if imagen(setea)";
                 $pathImg = $this->uploadImage($image);
 
                 $query = $this->db->prepare('INSERT INTO juego  (nombre,precio,descripcion,id_genero_fk,imagen) VALUES (?,?,?,?,?)');

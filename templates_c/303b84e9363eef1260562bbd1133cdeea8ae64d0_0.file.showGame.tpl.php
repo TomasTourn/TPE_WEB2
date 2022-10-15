@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 20:22:23
+/* Smarty version 4.2.1, created on 2022-10-16 00:03:27
   from 'C:\xampp\htdocs\proyectos\TPE_WEB2\templates\showGame.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6348575f0f5032_35157667',
+  'unifunc' => 'content_634b2e2f5ac3a4_74844330',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6348575f0f5032_35157667 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634b2e2f5ac3a4_74844330 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <table>
